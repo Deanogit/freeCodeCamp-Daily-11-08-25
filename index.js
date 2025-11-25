@@ -19,7 +19,7 @@ function isBalanced(s) {
   const splitB = s.slice(Math.ceil(half));
   console.log(splitA, splitB);
   // make an array
-  const regex = /[^a|e|i|o|u]+/;
+  const regex = /[a|e|i|o|u]/;
   // function regexTest(letter, array) {
   //   if (regex.test(letter)) {
   //    array.push(letter)
@@ -27,7 +27,7 @@ function isBalanced(s) {
   //   return array
   // }
   const arrayA = splitA.split(regex);
-  console.log(arrayA.length);
+  console.log(arrayA);
   // const arrayAV = arrayA.forEach((x) => regexTest(x))
   // const arrayB = splitB.split("")
   // console.log(arrayA.length, arrayB.length )
@@ -55,3 +55,6 @@ function isBalanced(s) {
 // The filter() method creates a new array filled with elements that pass a test provided by a function.
 // The filter() method does not execute the function for empty elements.
 // The filter() method does not change the original array.
+
+// The exec() method tests for a match in a string.
+// If it finds a match, it returns a result array, otherwise it returns null.
