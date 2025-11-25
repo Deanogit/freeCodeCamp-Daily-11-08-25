@@ -17,33 +17,36 @@ function isBalanced(s) {
   // split into two
   const splitA = s.slice(0, half);
   const splitB = s.slice(Math.ceil(half));
-  console.log(splitA, splitB);
+  // console.log(splitA, splitB)
   // make an array
   const arrayA = splitA.split('');
   const arrayB = splitB.split('');
   // console.log(splitA.split(""));
-  console.log(arrayA);
-  const regex = /[a|e|i|o|u]/;
+  // console.log(arrayA)
+  const regex = /[a|e|i|o|u]/i;
   const mappA = [];
   const mappB = [];
-  const mapA = arrayA.map((x) => {
+  arrayA.map((x) => {
     if (regex.test(x)) {
-      console.log(x);
+      // console.log(x)
       return mappA.push(x);
     }
   });
-  console.log(mapA);
-  const mapB = arrayB.map((x) => {
+
+  arrayB.map((x) => {
     if (regex.test(x)) {
-      console.log(x);
+      // console.log(x)
       return mappB.push(x);
     }
   });
 
-  console.log(mappA);
-  console.log(mappB);
+  console.log(mappA.length);
+  console.log(mappB.length);
 
-  if (mappA.length === mappB.length) {
+  const a = mappA.length;
+  const b = mappB.length;
+
+  if (a === b) {
     return true;
   }
   return false;
@@ -106,4 +109,4 @@ function isBalanced(s) {
 // The includes() method returns false if the value is not found.
 // The includes() method is case sensitive.
 
-isBalanced('weework');
+isBalanced('Lorem Ipsum');
