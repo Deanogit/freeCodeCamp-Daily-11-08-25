@@ -19,14 +19,23 @@ function isBalanced(s) {
   const splitB = s.slice(Math.ceil(half));
   console.log(splitA, splitB);
   // make an array
-  const regex = /[a|e|i|o|u]*/g;
-  const arrayA = splitA.split('');
-  const arrayB = splitB.split('');
-  console.log(arrayA.length, arrayB.length);
-  if (arrayA.length !== arrayB.length) {
-    return false;
-  }
-  return true;
+  const regex = /[^a|e|i|o|u]+/;
+  // function regexTest(letter, array) {
+  //   if (regex.test(letter)) {
+  //    array.push(letter)
+  //  }
+  //   return array
+  // }
+  const arrayA = splitA.split(regex);
+  console.log(arrayA.length);
+  // const arrayAV = arrayA.forEach((x) => regexTest(x))
+  // const arrayB = splitB.split("")
+  // console.log(arrayA.length, arrayB.length )
+  // console.log(arrayAV.length)
+  // if (arrayA.length
+  // !== arrayB.length) {
+  //  return false
+  //} return true
   // count how many vowels
   // const vowelsA = splitA.map((x) => x.matchAll(regex))
   // console.log(vowelsA)
