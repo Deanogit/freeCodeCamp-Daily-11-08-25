@@ -4,3 +4,45 @@
 // The string can contain any characters.
 // The letters a, e, i, o, and u, in either uppercase or lowercase, are considered vowels.
 // If there's an odd number of characters in the string, ignore the center character.
+
+function isBalanced(s) {
+  // console.log(s)
+  // s is a string
+  // get the length of string
+  const length = s.length;
+  // console.log(length)
+  // get half
+  const half = length / 2;
+  // console.log(half)
+  // split into two
+  const splitA = s.slice(0, half);
+  const splitB = s.slice(Math.ceil(half));
+  console.log(splitA, splitB);
+  // make an array
+  const regex = /[a|e|i|o|u]*/g;
+  const arrayA = splitA.split('');
+  const arrayB = splitB.split('');
+  console.log(arrayA.length, arrayB.length);
+  if (arrayA.length !== arrayB.length) {
+    return false;
+  }
+  return true;
+  // count how many vowels
+  // const vowelsA = splitA.map((x) => x.matchAll(regex))
+  // console.log(vowelsA)
+}
+
+// The slice() method extracts a part of a string.
+// The slice() method returns the extracted part in a new string.
+// The slice() method does not change the original string.
+// The start and end parameters specifies the part of the string to extract.
+// The first position is 0, the second is 1, ...
+// A negative number selects from the end of the string.
+
+// The matchAll() method matches a string against a regular expression **
+// The matchAll() method returns an array with the matches.
+// The matchAll() method returns null if no match is found.
+
+// The filter() method creates a new array filled with elements that pass a test provided by a function.
+// The filter() method does not execute the function for empty elements.
+// The filter() method does not change the original array.
