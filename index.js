@@ -19,15 +19,51 @@ function isBalanced(s) {
   const splitB = s.slice(Math.ceil(half));
   console.log(splitA, splitB);
   // make an array
-  const regex = /[a|e|i|o|u]/;
-  // function regexTest(letter, array) {
-  //   if (regex.test(letter)) {
-  //    array.push(letter)
-  //  }
-  //   return array
-  // }
-  const arrayA = splitA.split(regex);
+  const arrayA = splitA.split('');
+  const arrayB = splitB.split('');
+  // console.log(splitA.split(""));
   console.log(arrayA);
+  const regex = /[a|e|i|o|u]/;
+  const mappA = [];
+  const mappB = [];
+  const mapA = arrayA.map((x) => {
+    if (regex.test(x)) {
+      console.log(x);
+      return mappA.push(x);
+    }
+  });
+  console.log(mapA);
+  const mapB = arrayB.map((x) => {
+    if (regex.test(x)) {
+      console.log(x);
+      return mappB.push(x);
+    }
+  });
+
+  console.log(mappA);
+  console.log(mappB);
+
+  if (mappA.length === mappB.length) {
+    return true;
+  }
+  return false;
+
+  // const vowelsA = arrayA.filter()
+  // console.log(vowelsA)
+
+  //function regexTest(letter, array) {
+  //   if (regex.test(letter)) {
+  //   array.push(letter)
+  // }
+  //  return array
+  // }
+  //const vowelArray = [];
+  //splitA.map((x) => {
+  // regexTest(x, vowelArray)
+  // })
+  //console.log(vowelArray)
+  //const arrayA = splitA.split(regex)
+  //console.log(arrayA)
   // const arrayAV = arrayA.forEach((x) => regexTest(x))
   // const arrayB = splitB.split("")
   // console.log(arrayA.length, arrayB.length )
@@ -58,3 +94,16 @@ function isBalanced(s) {
 
 // The exec() method tests for a match in a string.
 // If it finds a match, it returns a result array, otherwise it returns null.
+
+// const ages = [32, 33, 16, 40];
+// const result = ages.filter(checkAdult);
+
+// function checkAdult(age) {
+//   return age >= 18;
+// }
+
+// The includes() method returns true if an array contains a specified value.
+// The includes() method returns false if the value is not found.
+// The includes() method is case sensitive.
+
+isBalanced('weework');
